@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Speed Estimator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li id="settings-tab" class="active">⚙️ Settings</li>
+      <li id="about-tab">ℹ️ About</li>
+      <li id="help-tab">❓ Help</li>
+    </ul>
+  </div>
+  <div class="content">
+    <!-- Settings Tab -->
+    <div id="settings" class="tab-content active">
+      <h1 class="title">Settings</h1>
+      <div class="settings-container glass-effect">
+        <div class="setting">
+          <label for="position">📍 Display Position:</label>
+          <select id="position" class="input-glass">
+            <option value="top-right">Top Right</option>
+            <option value="top-left">Top Left</option>
+          </select>
+        </div>
+        <div class="setting">
+          <label for="theme">🎨 Theme:</label>
+          <select id="theme" class="input-glass">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+          </select>
+        </div>
+        <div class="setting">
+          <label for="timer-format">⏱ Timer Format:</label>
+          <select id="timer-format" class="input-glass">
+            <option value="minutes">Minutes Only</option>
+            <option value="hh:mm:ss">HH:MM:SS</option>
+          </select>
+        </div>
+        <button id="test" class="button-glass">🧪 Test Settings</button>
+        <button id="reset" class="button-glass">🔄 Reset to Defaults</button>
+      </div>
+    </div>
+
+    <!-- About Tab -->
+    <div id="about" class="tab-content">
+      <h1 class="title">About</h1>
+      <p>This extension calculates and displays the adjusted time for videos based on playback speed.</p>
+      <p>Version: 1.2</p>
+    </div>
+
+    <!-- Help Tab -->
+    <div id="help" class="tab-content">
+      <h1 class="title">Help</h1>
+      <p>Having trouble? Here's how to use this extension:</p>
+      <ul>
+        <li>Change settings under the "Settings" tab.</li>
+        <li>Use the "Test Settings" button to preview changes.</li>
+        <li>Reset settings using the "Reset to Defaults" button.</li>
+      </ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

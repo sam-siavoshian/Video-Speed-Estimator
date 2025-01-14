@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Video Speed Estimator",
+    "version": "1.0.0",
+    "description": "Displays the estimated time of a video based on its playback speed.",
+    "permissions": ["storage", "scripting", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ]
+  }
+  

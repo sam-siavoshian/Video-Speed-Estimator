@@ -1,0 +1,188 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Use modern fonts */
+    display: flex;
+    height: 450px;
+    width: 650px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Modern gradient background */
+    color: #ffffff;
+    overflow: hidden;
+  }
+  
+  /* Sidebar Navigation */
+  .sidebar {
+    width: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .sidebar ul li {
+    padding: 12px;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 1em;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .sidebar ul li.active {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Main Content */
+  .content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Title Styling */
+  .title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #e0eaff; /* Light pastel color for readability */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+  
+  /* Glassmorphism Settings Container */
+  .settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Frosted glass effect */
+    backdrop-filter: blur(15px); /* Frosting */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .settings-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Individual Settings */
+  .setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .setting label {
+    font-size: 1em;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .input-glass {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 8px 12px;
+    color: #ffffff;
+    font-size: 0.9em;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 60%;
+    text-align: center;
+  }
+  
+  .input-glass:hover,
+  .input-glass:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Buttons */
+  .button-glass {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 12px 16px;
+    border-radius: 15px;
+    border: none;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button-glass:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .button-glass:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Tooltip Styling */
+  .tooltip {
+    font-size: 0.8em;
+    color: #aaa;
+    margin-left: 10px;
+    font-style: italic;
+    text-shadow: none;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Input Animations */
+  .input-glass {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .button-glass {
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  
