@@ -4,6 +4,12 @@
     "version": "1.0.0",
     "description": "Displays the estimated time of a video based on its playback speed.",
     "permissions": ["storage", "scripting", "activeTab"],
+    "web_accessible_resources": [{
+      "resources": [ 
+        "fonts/*" 
+      ],
+      "matches": [ "<all_urls>" ]
+    }],
     "host_permissions": ["<all_urls>"],
     "background": {
       "service_worker": "background.js"

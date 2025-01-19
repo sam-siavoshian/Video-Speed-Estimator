@@ -9,58 +9,84 @@
 <body>
   <div class="sidebar">
     <ul>
-      <li id="settings-tab" class="active">⚙️ Settings</li>
-      <li id="about-tab">ℹ️ About</li>
-      <li id="help-tab">❓ Help</li>
+      <li id="settings-tab" class="active" data-i18n="settingsTab">⚙️ Settings</li>
+      <li id="about-tab" data-i18n="aboutTab">ℹ️ About</li>
     </ul>
   </div>
   <div class="content">
     <!-- Settings Tab -->
     <div id="settings" class="tab-content active">
-      <h1 class="title">Settings</h1>
-      <div class="settings-container glass-effect">
+      <h1 class="title" data-i18n="settingsTitle">Settings</h1>
+      <div class="settings-container">
+        <!-- Language Selection -->
         <div class="setting">
-          <label for="position">📍 Display Position:</label>
+          <label for="language-select" data-i18n="languageLabel">🌐 Language:</label>
+          <select id="language-select" class="input-glass">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+            <option value="fa">فارسی</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+        <!-- Display Position -->
+        <div class="setting">
+          <label for="position" data-i18n="displayPositionLabel">📍 Display Position:</label>
           <select id="position" class="input-glass">
-            <option value="top-right">Top Right</option>
-            <option value="top-left">Top Left</option>
+            <option value="top-right" data-i18n="topRight">Top Right</option>
+            <option value="top-left" data-i18n="topLeft">Top Left</option>
           </select>
         </div>
+        <!-- Theme Selection -->
         <div class="setting">
-          <label for="theme">🎨 Theme:</label>
+          <label for="theme" data-i18n="themeLabel">🎨 Theme:</label>
           <select id="theme" class="input-glass">
-            <option value="dark">Dark</option>
-            <option value="light">Light</option>
+            <option value="dark" data-i18n="darkTheme">Dark</option>
+            <option value="light" data-i18n="lightTheme">Light</option>
           </select>
         </div>
+        <!-- Timer Format -->
         <div class="setting">
-          <label for="timer-format">⏱ Timer Format:</label>
+          <label for="timer-format" data-i18n="timerFormatLabel">⏱ Time Format:</label>
           <select id="timer-format" class="input-glass">
-            <option value="minutes">Minutes Only</option>
-            <option value="hh:mm:ss">HH:MM:SS</option>
+            <option value="minutes" data-i18n="minutesFormat">Minutes</option>
+            <option value="hh:mm:ss" data-i18n="hhmmssFormat">HH:MM:SS</option>
           </select>
         </div>
-        <button id="test" class="button-glass">🧪 Test Settings</button>
-        <button id="reset" class="button-glass">🔄 Reset to Defaults</button>
+        <!-- Buttons -->
+        <button id="apply-settings" class="button-glass" data-i18n="applyChanges">✅ Apply Changes</button>
+        <button id="reset-settings" class="button-glass" data-i18n="resetSettings">🔄 Reset</button>
       </div>
     </div>
 
     <!-- About Tab -->
     <div id="about" class="tab-content">
-      <h1 class="title">About</h1>
-      <p>This extension calculates and displays the adjusted time for videos based on playback speed.</p>
-      <p>Version: 1.2</p>
-    </div>
-
-    <!-- Help Tab -->
-    <div id="help" class="tab-content">
-      <h1 class="title">Help</h1>
-      <p>Having trouble? Here's how to use this extension:</p>
-      <ul>
-        <li>Change settings under the "Settings" tab.</li>
-        <li>Use the "Test Settings" button to preview changes.</li>
-        <li>Reset settings using the "Reset to Defaults" button.</li>
-      </ul>
+      <h1 class="title" data-i18n="aboutTitle">ℹ️ About</h1>
+      <p data-i18n="aboutParagraph1">
+        This extension helps you unlock the true potential of video playback! 🚀
+        It calculates the exact amount of time you'll save by speeding up your videos and shows 
+        the impact of your increased playback speed. 🎉 Whether you're watching tutorials, lectures, 
+        or just bingeing your favorite series, you'll know how much time you're actually gaining. 🕒✨
+      </p>
+      <p data-i18n="aboutParagraph2">
+        Ever wonder what happens when you bump up the speed from 1x to 2x? This extension not only 
+        tells you how much faster you'll finish but also gives you real-time insights into the 
+        difference it makes. Perfect for efficiency enthusiasts, students, and anyone who values 
+        their time! 💡📚
+      </p>
+      <p data-i18n="aboutParagraph3">
+        Developed with ❤️ by a solo developer passionate about making your life easier. 
+        If you love this extension and want to support its development, you can 
+        <strong>Buy Me a Coffee! ☕</strong>
+      </p>
+      <a href="https://www.buymeacoffee.com/SsAndS" target="_blank">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/arial-blue.png" 
+             alt="Buy Me A Coffee" 
+             style="height: 60px !important; width: 217px !important;">
+      </a>
+      <p style="margin-top: 15px;" data-i18n="thankYou">Thank you for your support and happy speed-watching! 🥳🎥</p>
+      <p data-i18n="version">Version: 1.2</p>
     </div>
   </div>
   <script src="popup.js"></script>

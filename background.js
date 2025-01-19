@@ -1,9 +1,11 @@
 // background.js
 chrome.runtime.onInstalled.addListener(() => {
-    // Set default settings
+    // Set default settings including language
     chrome.storage.sync.set({
-        position: "top-right", // Only top positions
+        position: "top-right",
         theme: "dark",
+        timerFormat: "minutes",
+        language: "en",
         enableAnimations: true,
     });
     console.log("Default settings saved.");
