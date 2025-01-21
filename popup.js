@@ -24,9 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "Ever wonder what happens when you bump up the speed from 1x to 2x? This extension not only tells you how much faster you'll finish but also gives you real-time insights into the difference it makes. Perfect for efficiency enthusiasts, students, and anyone who values their time! 💡📚",
       aboutParagraph3:
         "Developed with ❤️ by a solo developer passionate about making your life easier. If you love this extension and want to support its development, you can <strong>Buy Me a Coffee! ☕</strong>",
-      thankYou:
-        "Thank you for your support and happy speed-watching! 🥳🎥",
-      version: "Version: 1.0"
+      thankYou: "Thank you for your support and happy speed-watching! 🥳🎥",
+      version: "Version: 1.0",
+      modalTitle: "✅ Success",
+      modalMessage: "Settings have been applied successfully! 🎉",
+      modalOk: "OK",
     },
     es: {
       settingsTab: "⚙️ Configuración",
@@ -52,7 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
       aboutParagraph3:
         "Desarrollado con ❤️ por un desarrollador independiente apasionado por facilitar tu vida. Si te encanta esta extensión y deseas apoyar su desarrollo, puedes <strong>¡Invitarme a un Café! ☕</strong>",
       thankYou: "¡Gracias por tu apoyo y feliz visualización rápida! 🥳🎥",
-      version: "Versión: 1.0."
+      version: "Versión: 1.0.",
+      modalTitle: "✅ Éxito",
+      modalMessage: "¡Las configuraciones se han aplicado correctamente! 🎉",
+      modalOk: "OK",
     },
     ru: {
       settingsTab: "⚙️ Настройки",
@@ -79,7 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Разработано с ❤️ одним разработчиком, страстно желающим облегчить вашу жизнь. Если вам нравится это расширение и вы хотите поддержать его развитие, вы можете <strong>купить мне кофе! ☕</strong>",
       thankYou:
         "Спасибо за вашу поддержку и приятного быстрого просмотра! 🥳🎥",
-      version: "Версия: 1.0."
+      version: "Версия: 1.0.",
+      modalTitle: "✅ Успех",
+      modalMessage: "Настройки успешно применены! 🎉",
+      modalOk: "OK",
     },
     fa: {
       settingsTab: "⚙️ تنظیمات",
@@ -104,9 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "آیا تا به حال فکر کرده‌اید که وقتی سرعت را از 1x به 2x افزایش می‌دهید چه اتفاقی می‌افتد؟ این افزونه نه تنها به شما می‌گوید چقدر سریع‌تر خواهید تمام کرد، بلکه بینش‌های لحظه‌ای درباره تفاوت ایجاد شده ارائه می‌دهد. مناسب برای علاقه‌مندان به بهره‌وری، دانشجویان و هر کسی که به زمان خود اهمیت می‌دهد! 💡📚",
       aboutParagraph3:
         "با ❤️ توسط یک توسعه‌دهنده مستقل که مشتاق به آسان‌تر کردن زندگی شماست، توسعه یافته است. اگر از این افزونه لذت می‌برید و می‌خواهید از توسعه آن حمایت کنید، می‌توانید <strong>یک قهوه برای من بخرید! ☕</strong>",
-      thankYou:
-        "از حمایت شما متشکریم و تماشای سریع خوش بگذرد! 🥳🎥",
-      version: "نسخه: 1.0."
+      thankYou: "از حمایت شما متشکریم و تماشای سریع خوش بگذرد! 🥳🎥",
+      version: "نسخه: 1.0.",
+      modalTitle: "✅ موفقیت",
+      modalMessage: "تنظیمات با موفقیت اعمال شد! 🎉",
+      modalOk: "تایید",
     },
     ar: {
       settingsTab: "⚙️ الإعدادات",
@@ -131,9 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "هل تساءلت يومًا عما يحدث عندما تزيد السرعة من 1x إلى 2x؟ هذا الامتداد لا يخبرك فقط بمدى سرعتك في الانتهاء، بل يقدم لك أيضًا رؤى لحظية حول الفرق الذي يحدثه ذلك. مثالي لعشاق الكفاءة والطلاب وأي شخص يقدر وقته! 💡📚",
       aboutParagraph3:
         "تم تطويره مع ❤️ بواسطة مطور مستقل شغوف بجعل حياتك أسهل. إذا كنت تحب هذا الامتداد وترغب في دعم تطويره، يمكنك <strong>شراء قهوة لي! ☕</strong>",
-      thankYou:
-        "شكرًا لدعمك واستمتع بمشاهدة سريعة! 🥳🎥",
-      version: "الإصدار: 1.0."
+      thankYou: "شكرًا لدعمك واستمتع بمشاهدة سريعة! 🥳🎥",
+      version: "الإصدار: 1.0.",
+      modalTitle: "✅ نجاح",
+      modalMessage: "تم تطبيق الإعدادات بنجاح! 🎉",
+      modalOk: "حسنًا",
     },
     fr: {
       settingsTab: "⚙️ Paramètres",
@@ -158,10 +170,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "Vous êtes-vous déjà demandé ce qui se passe lorsque vous augmentez la vitesse de 1x à 2x? Cette extension ne vous indique pas seulement à quel point vous finirez plus rapidement, mais vous donne également des insights en temps réel sur la différence que cela fait. Parfait pour les passionnés d'efficacité, les étudiants et tous ceux qui valorisent leur temps! 💡📚",
       aboutParagraph3:
         "Développé avec ❤️ par un développeur solo passionné par le fait de rendre votre vie plus facile. Si vous aimez cette extension et souhaitez soutenir son développement, vous pouvez <strong>Acheter un Café! ☕</strong>",
-      thankYou:
-        "Merci pour votre soutien et bon visionnage rapide! 🥳🎥",
-      version: "Version: 1.0."
-    }
+      thankYou: "Merci pour votre soutien et bon visionnage rapide! 🥳🎥",
+      version: "Version: 1.0.",
+      modalTitle: "✅ Succès",
+      modalMessage: "Les paramètres ont été appliqués avec succès! 🎉",
+      modalOk: "OK",
+    },
   };
 
   // Function to apply translations and theme
@@ -214,23 +228,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Load settings from Chrome storage or set defaults
   function loadSettings() {
-    chrome.storage.sync.get(["language", "theme", "position", "timerFormat"], (data) => {
-      const settings = {
-        language: data.language || "en",
-        theme: data.theme || "dark",
-        position: data.position || "top-right",
-        timerFormat: data.timerFormat || "minutes"
-      };
+    chrome.storage.sync.get(
+      ["language", "theme", "position", "timerFormat"],
+      (data) => {
+        const settings = {
+          language: data.language || "en",
+          theme: data.theme || "dark",
+          position: data.position || "top-right",
+          timerFormat: data.timerFormat || "minutes",
+        };
 
-      // Set the form values
-      document.getElementById("language-select").value = settings.language;
-      document.getElementById("theme").value = settings.theme;
-      document.getElementById("position").value = settings.position;
-      document.getElementById("timer-format").value = settings.timerFormat;
+        // Set the form values
+        document.getElementById("language-select").value = settings.language;
+        document.getElementById("theme").value = settings.theme;
+        document.getElementById("position").value = settings.position;
+        document.getElementById("timer-format").value = settings.timerFormat;
 
-      // Apply settings
-      applySettings(settings);
-    });
+        // Apply settings
+        applySettings(settings);
+      }
+    );
   }
 
   // Initialize settings on load
@@ -263,7 +280,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Event listener for Apply Settings button
+  // Listen for messages from content scripts (if any)
+  chrome.runtime.onMessage.addListener((message) => {
+    if (message.type === "updateSettings") {
+      applySettings(message.settings);
+    }
+  });
+
+  // Function to show modal with translated text
+  function showModal(titleKey, messageKey) {
+    const lang = document.getElementById("language-select").value || "en";
+    const modal = document.getElementById("custom-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalMessage = document.getElementById("modal-message");
+    const modalOk = document.getElementById("modal-ok");
+
+    modalTitle.innerHTML = translations[lang][titleKey] || "ℹ️ Information";
+    modalMessage.innerHTML =
+      translations[lang][messageKey] || "This is a modal message.";
+    modalOk.innerHTML = translations[lang]["modalOk"] || "OK";
+
+    modal.style.display = "flex";
+  }
+
+  // Function to hide modal
+  function hideModal() {
+    const modal = document.getElementById("custom-modal");
+    modal.style.display = "none";
+  }
+
+  // Event listeners for modal
+  document.getElementById("modal-close").addEventListener("click", hideModal);
+  document.getElementById("modal-ok").addEventListener("click", hideModal);
+  window.addEventListener("click", (event) => {
+    const modal = document.getElementById("custom-modal");
+    if (event.target == modal) {
+      hideModal();
+    }
+  });
+
+  // Replace alert calls with showModal
   document.getElementById("apply-settings").addEventListener("click", () => {
     const position = document.getElementById("position").value;
     const theme = document.getElementById("theme").value;
@@ -271,29 +327,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const language = document.getElementById("language-select").value;
 
     const settings = { position, theme, timerFormat, language };
-    saveSettings(settings);
 
-    alert(translations[language]?.applyChanges || "Settings applied!");
+    chrome.runtime.sendMessage(
+      { type: "saveSettings", settings },
+      (response) => {
+        if (response.success) {
+          showModal("modalTitle", "modalMessage");
+        } else {
+          showModal("modalTitle", "modalMessage"); // You can add separate keys for errors if needed
+        }
+      }
+    );
   });
 
-  // Event listener for Reset Settings button
   document.getElementById("reset-settings").addEventListener("click", () => {
     const defaultSettings = {
       position: "top-right",
       theme: "dark",
       timerFormat: "minutes",
-      language: "en"
+      language: "en",
     };
     chrome.storage.sync.set(defaultSettings, () => {
-      alert(translations[defaultSettings.language]?.resetSettings || "Settings reset!");
+      showModal("modalTitle", "modalMessage"); // Ensure appropriate keys are used
       window.location.reload();
     });
-  });
-
-  // Listen for messages from content scripts (if any)
-  chrome.runtime.onMessage.addListener((message) => {
-    if (message.type === "updateSettings") {
-      applySettings(message.settings);
-    }
   });
 });
