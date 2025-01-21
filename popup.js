@@ -160,12 +160,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "Développé avec ❤️ par un développeur solo passionné par le fait de rendre votre vie plus facile. Si vous aimez cette extension et souhaitez soutenir son développement, vous pouvez <strong>Acheter un Café! ☕</strong>",
       thankYou:
         "Merci pour votre soutien et bon visionnage rapide! 🥳🎥",
-      version: "Version: 1.2"
+      version: "Version: 1.0."
     }
   };
 
-  // Function to apply translations
-  function applyTranslations(lang) {
+  // Function to apply translations and theme
+  function applySettings(settings) {
+    const lang = settings.language || "en";
+    const theme = settings.theme || "dark";
+
+    // Apply translations
     const elements = document.querySelectorAll("[data-i18n]");
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
@@ -184,46 +188,69 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+
+    // Apply theme
+    applyTheme(theme);
   }
 
-  // Save selected language to Chrome storage
-  function saveLanguage(lang) {
-    chrome.storage.sync.set({ language: lang }, () => {
-      console.log(`Language set to ${lang}`);
+  // Function to apply theme
+  function applyTheme(theme) {
+    if (theme === "light") {
+      document.body.classList.add("light-theme");
+      document.body.classList.remove("dark-theme");
+    } else {
+      document.body.classList.add("dark-theme");
+      document.body.classList.remove("light-theme");
+    }
+  }
+
+  // Save settings to Chrome storage
+  function saveSettings(settings) {
+    chrome.storage.sync.set(settings, () => {
+      console.log("Settings saved:", settings);
+      applySettings(settings);
     });
   }
 
-  // Load language from storage or default to browser language
-  function loadLanguage() {
-    chrome.storage.sync.get("language", (data) => {
-      let lang = data.language;
-      if (!lang) {
-        // Try browser language
-        lang = navigator.language.slice(0, 2);
-        // Fallback to English if unsupported
-        if (!translations[lang]) lang = "en";
-        chrome.storage.sync.set({ language: lang }, () => {
-          console.log(`Default language set to ${lang}`);
-        });
-      }
-      document.getElementById("language-select").value = lang;
-      applyTranslations(lang);
+  // Load settings from Chrome storage or set defaults
+  function loadSettings() {
+    chrome.storage.sync.get(["language", "theme", "position", "timerFormat"], (data) => {
+      const settings = {
+        language: data.language || "en",
+        theme: data.theme || "dark",
+        position: data.position || "top-right",
+        timerFormat: data.timerFormat || "minutes"
+      };
+
+      // Set the form values
+      document.getElementById("language-select").value = settings.language;
+      document.getElementById("theme").value = settings.theme;
+      document.getElementById("position").value = settings.position;
+      document.getElementById("timer-format").value = settings.timerFormat;
+
+      // Apply settings
+      applySettings(settings);
     });
   }
 
-  // *** MAIN CODE EXECUTION ***
+  // Initialize settings on load
+  loadSettings();
 
-  // 1. Initialize language
-  loadLanguage();
-
-  // 2. Language selection change
+  // Event listener for language selection change
   document.getElementById("language-select").addEventListener("change", (e) => {
     const selectedLang = e.target.value;
-    applyTranslations(selectedLang);
-    saveLanguage(selectedLang);
+    const currentTheme = document.getElementById("theme").value;
+    saveSettings({ language: selectedLang, theme: currentTheme });
   });
 
-  // 3. Tab Navigation
+  // Event listener for theme selection change
+  document.getElementById("theme").addEventListener("change", (e) => {
+    const selectedTheme = e.target.value;
+    const currentLanguage = document.getElementById("language-select").value;
+    saveSettings({ theme: selectedTheme, language: currentLanguage });
+  });
+
+  // Event listener for tab navigation
   const tabs = document.querySelectorAll(".sidebar ul li");
   const tabContents = document.querySelectorAll(".tab-content");
   tabs.forEach((tab, index) => {
@@ -236,26 +263,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 4. Apply Settings
+  // Event listener for Apply Settings button
   document.getElementById("apply-settings").addEventListener("click", () => {
     const position = document.getElementById("position").value;
     const theme = document.getElementById("theme").value;
     const timerFormat = document.getElementById("timer-format").value;
     const language = document.getElementById("language-select").value;
 
-    // Always include all keys in settings
     const settings = { position, theme, timerFormat, language };
+    saveSettings(settings);
 
-    chrome.runtime.sendMessage({ type: "saveSettings", settings }, (response) => {
-      if (response.success) {
-        alert(translations[language]?.applyChanges || "Settings applied!");
-      } else {
-        alert("Failed to save settings.");
-      }
-    });
+    alert(translations[language]?.applyChanges || "Settings applied!");
   });
 
-  // 5. Reset Settings
+  // Event listener for Reset Settings button
   document.getElementById("reset-settings").addEventListener("click", () => {
     const defaultSettings = {
       position: "top-right",
@@ -264,17 +285,15 @@ document.addEventListener("DOMContentLoaded", () => {
       language: "en"
     };
     chrome.storage.sync.set(defaultSettings, () => {
-      // Use the default language to display reset message
       alert(translations[defaultSettings.language]?.resetSettings || "Settings reset!");
       window.location.reload();
     });
   });
 
-  // 6. Load & Populate Current Settings
-  chrome.storage.sync.get(["position", "theme", "timerFormat", "language"], (settings) => {
-    document.getElementById("position").value = settings.position || "top-right";
-    document.getElementById("theme").value = settings.theme || "dark";
-    document.getElementById("timer-format").value = settings.timerFormat || "minutes";
-    document.getElementById("language-select").value = settings.language || "en";
+  // Listen for messages from content scripts (if any)
+  chrome.runtime.onMessage.addListener((message) => {
+    if (message.type === "updateSettings") {
+      applySettings(message.settings);
+    }
   });
 });
